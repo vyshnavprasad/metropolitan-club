@@ -1,0 +1,160 @@
+---
+import Header from "../components/HeaderHero.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import Layout from "../layouts/Default.astro";
+import "../styles/index.css";
+
+// import Lenis from "lenis";
+// const lenis = new Lenis();
+// lenis.on("scroll", (e) => {
+//     console.log(e);
+// });
+---
+
+<Layout title={SITE_TITLE} description={SITE_DESCRIPTION}>
+    <Header />
+    <main>
+        <section id="about-us">
+            <div class="container">
+                <div class="hero-card">
+                    <h2>440+</h2>
+                    <br />
+                    <h5>Members</h5>
+                </div>
+                <div class="hero-card">
+                    <h2>15+</h2>
+                    <br />
+                    <h5>Years</h5>
+                </div>
+                <div class="hero-card">
+                    <h2>24+</h2>
+                    <br />
+                    <h5>Affiliated&nbsp;Clubs</h5>
+                </div>
+            </div>
+        </section>
+
+        <section id="facilities">
+            <div class="container">
+                <h5>#Facilities</h5>
+                <h1>Our Exclusive Amenities</h1>
+                <div class="card-list">
+                    <div class="card">
+                        <img
+                            style="background-color: rgb(210, 37, 106)"
+                            src="public/icons/badminton.svg"
+                        />
+                        <h6>Badminton</h6>
+                    </div>
+                    <div class="card">
+                        <img
+                            style="background-color: rgb(31, 200, 73)"
+                            src="public/icons/snooker.svg"
+                        />
+                        <h6>Snooker</h6>
+                    </div>
+                    <div class="card">
+                        <img
+                            style="background-color: rgb(255, 162, 49)"
+                            src="public/icons/kettlebell.svg"
+                        />
+                        <h6>Gym</h6>
+                    </div>
+                    <div class="card">
+                        <img
+                            style="background-color: rgb(255, 62, 62)"
+                            src="public/icons/living-room.svg"
+                        />
+                        <h6>Waiting Area</h6>
+                    </div>
+                    <div class="card">
+                        <img
+                            style="background-color: rgb(29, 189, 181)"
+                            src="public/icons/swimming-pool.svg"
+                        />
+                        <h6>Swimming Pool</h6>
+                    </div>
+                    <div class="card">
+                        <img
+                            style="background-color: rgb(39, 86, 215)"
+                            src="public/icons/chair.svg"
+                        />
+                        <h6>Permit Room</h6>
+                    </div>
+                    <div class="card">
+                        <img
+                            style="background-color: rgb(194, 26, 147)"
+                            src="public/icons/room.svg"
+                        />
+                        <h6>Private Room</h6>
+                    </div>
+                </div>
+                <p>
+                    we pride ourselves on offering a range of luxurious
+                    amenities designed to enhance your lifestyle.<br /> Our facilities
+                    are crafted to provide comfort, convenience, and a touch of elegance
+                </p>
+                <a class="btn" href="facilities.html">
+                    Facilities in detail >>>
+                </a>
+            </div>
+        </section>
+
+        <section id="affiliated-clubs">
+            <div class="container">
+                <div class="content d-flex mobile-collapse">
+                    <div>
+                        <h1 class="h-plus">24+</h1>
+                        <h1>Affiliated Clubs</h1>
+                    </div>
+                    <div class="p-relative">
+                        <p>
+                            We have a rapidly expanding network of affiliated
+                            clubs spread throughout Kerala, fostering a vibrant
+                            community. Our clubs offer a variety of activities
+                            and amenities, ensuring that members can enjoy a
+                            rich and fulfilling experience wherever they are
+                            located.
+                        </p>
+                        <a class="btn" href="affiliated-clubs.html">
+                            List of Clubs&nbsp; &nbsp;>>>
+                        </a>
+                    </div>
+                </div>
+                <img src="public/index/clubs-people.svg" alt="" />
+            </div>
+        </section>
+
+        <section id="latest-events">
+            <div class="container">
+                <img src="public/icons/spirals-of-vines.svg" />
+                <h1>Club Chronicles</h1>
+                <h5>Latest Events</h5>
+                <div class="hr"></div>
+                <ul id="event-list" class="owl-carousel"></ul>
+                <div class="hr"></div>
+                <a href="latest-events.html" class="btn"
+                    >View&nbsp;All&nbsp;Events</a
+                >
+            </div>
+        </section>
+
+        <section id="tourist-attractions">
+            <div class="container">
+                <h1>Discover Nearby Attractions</h1>
+                <img
+                    src="public/index/nearby-attractions.svg"
+                    alt="illustration"
+                    class="illustration"
+                />
+                <div class="marquee">
+                    <ul class="attractions-list d-flex marquee-1"></ul>
+                    <ul class="attractions-list d-flex marquee-2"></ul>
+                    <ul class="attractions-list d-flex marquee-3"></ul>
+                    <ul class="attractions-list d-flex marquee-4"></ul>
+                </div>
+                <a class="btn" href="nearby-attractions.html"> Discover >>> </a>
+            </div>
+        </section>
+    </main>
+</Layout>

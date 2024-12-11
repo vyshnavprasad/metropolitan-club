@@ -1,0 +1,14 @@
+---
+import HeaderDefault from './HeaderDefault.astro';
+
+interface Props {
+  title: String;
+}
+
+const { title } = Astro.props;
+---
+
+<HeaderDefault title={ title }>
+  <input type="text" id="find-input" placeholder="Find Club" />
+  <h6>Found <span id="search-results-count">##</span> results.</h6>
+</HeaderDefault>

@@ -1,0 +1,87 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import PreLoader from '../components/PreLoader.astro';
+import NavBar from '../components/NavBar.astro';
+import Footer from '../components/Footer.astro';
+
+const title = "Your Page Title";
+const description = "Your Page Description";
+const style = "/path/to/your/styles.css";
+---
+
+<html>
+  <head>
+    <BaseHead title={title} description={description} />
+    <link rel="stylesheet" href={style} />
+  </head>
+  <body>
+    <PreLoader />
+    <NavBar />
+    <slot />
+    <Footer />
+  </body>
+</html>
+
+<style>
+  @keyframes fade-out {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+
+  .loader-container {
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: fixed;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.5s;
+  }
+
+  .loader {
+    background-image: linear-gradient(#e40021 35%, #ff0000);
+    width: 100px;
+    height: 100px;
+    animation: spinning 1.7s linear infinite;
+    text-align: center;
+    border-radius: 50px;
+    filter: blur(1px);
+    box-shadow:
+      0px -5px 20px 0px #ff2486,
+      0px 5px 20px 0px #e40021;
+  }
+
+  .spinner {
+    background-color: white;
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+    filter: blur(10px);
+  }
+
+  @keyframes spinning {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    document.querySelector(".loader-container").style.animation =
+      "fade-out .5s .5s linear";
+    window.scrollTo(0, 0);
+
+    setTimeout(function () {
+      document.querySelector(".loader-container").style.display = "none";
+    }, 1000);
+  });
+</script>
